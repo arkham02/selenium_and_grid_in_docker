@@ -1,0 +1,11 @@
+docker pull selenium/hub
+docker pull selenium/node-firefox 
+docker pull selenium/node-chrome
+docker pull selenium/node-firefox-debug
+docker pull selenium/node-chrome-debug
+
+docker run --rm -d -p 4444:4444 --name myhub selenium/hub
+docker run --rm -d --link myhub:hub --name chrome1 selenium/node-chrome
+docker run --rm -d --link myhub:hub --name chrome2 selenium/node-chrome
+
+docker logs --follow --tail 50 myhub

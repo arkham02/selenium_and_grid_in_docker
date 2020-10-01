@@ -1,0 +1,15 @@
+services:
+
+  myhub:  
+    image: selenium/hub
+    ports: 
+      - "4444:4444"
+
+  chrome:
+    image: selenium/node-chrome
+    environment:
+      HUB_PORT_4444_TCP_ADDR: myhub
+      HUB_PORT_4444_TCP_PORT: 4444  
+    links: 
+      - myhub
+

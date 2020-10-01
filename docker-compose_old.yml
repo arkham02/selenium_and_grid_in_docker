@@ -1,0 +1,25 @@
+services:
+
+  myhub:  
+    image: selenium/hub
+    container_name: mygridhub
+    ports: 
+      - "4444:4444"
+
+  chrome1:
+    image: selenium/node-chrome
+    container_name: mychromenode1
+    environment:
+      HUB_PORT_4444_TCP_ADDR: myhub
+      HUB_PORT_4444_TCP_PORT: 4444  
+    links: 
+      - myhub
+
+  chrome2:
+    image: selenium/node-chrome
+    container_name: mychromenode2
+    environment:
+      HUB_PORT_4444_TCP_ADDR: myhub
+      HUB_PORT_4444_TCP_PORT: 4444  
+    links: 
+      - myhub
