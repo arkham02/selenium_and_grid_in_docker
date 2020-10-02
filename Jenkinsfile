@@ -8,7 +8,7 @@ pipeline{
         }
         stage('Spin up grid container'){
             steps{
-                bat 'docker compose up -d --scale chromenode=3'
+                bat 'docker-compose up -d --scale chromenode=3'
             }
         }
         stage('Build'){
@@ -23,7 +23,7 @@ pipeline{
         }
         stage('Clean up grid containers'){
             steps{
-                bat 'docker compose down'
+                bat 'docker-compose down'
             }
         }
     }
