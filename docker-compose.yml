@@ -1,15 +1,22 @@
 services:
 
-  myhub:  
-    image: selenium/hub
-    ports: 
+  myhub:
+    image: selenium/hub:latest
+    volumes:
+      - ./web/application:/application
+    ports:
       - "4444:4444"
 
-  chrome:
+  chromenode:
     image: selenium/node-chrome
-    environment:
-      HUB_PORT_4444_TCP_ADDR: myhub
-      HUB_PORT_4444_TCP_PORT: 4444  
-    links: 
+    depends_on:
       - myhub
-#docker compose up --scale chrome=3
+    environment:
+      - HUB_HOST=myhub
+
+
+#docker-compose up -d --scale chromenode=3
+#if volume not mapped correctly, provide the full path
+#depends_on: unless the dependent images gets pulled executed and started, the image wont start
+#if not all the images will run in parallel and there could be a synchronization problem. If my hub container starts late and node starts early, there is a possibility that node and hub don’t get connected
+#HUB_HOST: either use this or create a docker private network
