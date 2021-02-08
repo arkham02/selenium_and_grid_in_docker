@@ -18,5 +18,6 @@ services:
 #docker-compose up -d --scale chromenode=3
 #if volume not mapped correctly, provide the full path
 #depends_on: unless the dependent images gets pulled executed and started, the image wont start
-#if not all the images will run in parallel and there could be a synchronization problem. If my hub container starts late and node starts early, there is a possibility that node and hub don’t get connected
+#if not all the images will run in parallel and there could be a synchronization problem.
+#If my hub container starts late and node starts early, there is a possibility that node and hub don’t get connected
 #HUB_HOST: either use this or create a docker private network

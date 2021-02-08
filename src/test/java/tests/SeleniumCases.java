@@ -1,9 +1,7 @@
 package tests;
 
-import demo.C_InvokeChrome;
 import demo.D_Assertions;
 import demo.F_WorkingWithUIElements;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 public class SeleniumCases {
