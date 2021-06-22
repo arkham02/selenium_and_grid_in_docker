@@ -14,6 +14,12 @@ services:
     environment:
       - HUB_HOST=myhub
 
+  firefoxnode:
+    image: selenium/node-firefox
+    depends_on:
+      - myhub
+    environment:
+      - HUB_HOST=myhub
 
 #docker-compose up -d --scale chromenode=3
 #if volume not mapped correctly, provide the full path

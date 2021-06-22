@@ -2,6 +2,8 @@ package demo;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -25,7 +27,8 @@ public class C_InvokeChrome {
 
 	public WebDriver launch()  {
 
-		DesiredCapabilities capabilities= DesiredCapabilities.chrome();
+		//ChromeOptions capabilities= new ChromeOptions();
+		FirefoxOptions capabilities = new FirefoxOptions();
 		WebDriver driver = null;
 		try {
 			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);

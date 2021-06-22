@@ -8,6 +8,7 @@ public class SeleniumCases {
 
     @Test
     public void testCase1() throws InterruptedException {
+        System.out.println("Browser value:"+ System.getProperty("browser"));
         D_Assertions assertions = new D_Assertions();
         assertions.waitsAndAssertions();
         Thread.sleep(20000);

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Docker!" parallel="methods" >
+<suite name="Docker!"  >
     <test name="Docker x!">
         <classes>
             <class name="tests.SeleniumCases">
